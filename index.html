@@ -1,71 +1,102 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GeoClimate Insight</title>
+<title>GeoClimate Indonesia</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 
-<style>
-
-body{
-font-family:Segoe UI,sans-serif;
-}
-
-.hero{
-height:100vh;
-
-background:
-linear-gradient(
-rgba(0,0,0,.6),
-rgba(0,0,0,.6)
-),
-url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e');
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-color:white;
-text-align:center;
-}
-
-.hero h1{
-font-size:4rem;
-font-weight:bold;
-}
-
-</style>
 </head>
 
 <body>
 
+<nav class="navbar">
+
+<div class="logo">
+🌎 GIS_Insight
+</div>
+
+<div class="menu">
+
+<a href="#">Home</a>
+<a href="webgis.html">WebGIS</a>
+<a href="#">Dashboard</a>
+<a href="#">About</a>
+
+</div>
+
+</nav>
+
 <section class="hero">
 
-<div>
+<div class="hero-content">
 
-<h1>GeoClimate Insight</h1>
+<h1>
+GeoClimate Indonesia
+</h1>
 
-<p class="lead">
-Environmental Monitoring &
-Earth Observation Platform
+<p>
+Platform Monitoring Lingkungan,
+Iklim dan Kebencanaan Indonesia
+Berbasis Penginderaan Jauh
 </p>
 
-<a href="webgis.html"
-class="btn btn-success btn-lg">
-
-Open WebGIS
-
+<a href="webgis.html" class="btn">
+Masuk WebGIS
 </a>
 
 </div>
 
 </section>
 
+<section class="features">
+
+<div class="card">
+
+<h2>🌧 Curah Hujan</h2>
+
+<p>
+Monitoring CHIRPS dan ERA5
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>🌿 Vegetasi</h2>
+
+<p>
+Monitoring NDVI dan EVI
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>🌡 Temperatur</h2>
+
+<p>
+Monitoring LST MODIS
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>🔥 Kebakaran</h2>
+
+<p>
+Monitoring Hotspot
+</p>
+
+</div>
+
+</section>
+
 </body>
+
 </html>
