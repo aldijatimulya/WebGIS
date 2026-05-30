@@ -1,52 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
+
 <head>
 
-<meta charset="utf-8">
+<meta charset="UTF-8">
 
-<title>WebGIS</title>
+<title>GeoClimate WebGIS</title>
 
 <link rel="stylesheet"
 href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
-<style>
-
-body{
-margin:0;
-}
-
-.sidebar{
-
-position:absolute;
-left:0;
-top:0;
-
-width:300px;
-height:100vh;
-
-background:#1e293b;
-color:white;
-
-padding:20px;
-
-z-index:1000;
-}
-
-#map{
-
-position:absolute;
-left:300px;
-
-width:calc(100% - 300px);
-height:100vh;
-
-}
-
-.layer{
-margin:10px 0;
-}
-
-</style>
+<link rel="stylesheet"
+href="css/style.css">
 
 </head>
 
@@ -54,26 +19,67 @@ margin:10px 0;
 
 <div class="sidebar">
 
-<h2>GeoClimate</h2>
+<h2>
+🌎 GeoClimate
+</h2>
 
 <hr>
 
-<h4>Layer</h4>
+<h3>Layer</h3>
 
-<div class="layer">
-<input type="checkbox"> NDVI
+<label>
+<input type="checkbox">
+Curah Hujan
+</label>
+
+<br><br>
+
+<label>
+<input type="checkbox">
+NDVI
+</label>
+
+<br><br>
+
+<label>
+<input type="checkbox">
+LST
+</label>
+
+<br><br>
+
+<label>
+<input type="checkbox">
+Deforestasi
+</label>
+
+<br><br>
+
+<label>
+<input type="checkbox">
+Hotspot
+</label>
+
+<hr>
+
+<h3>Statistik</h3>
+
+<div class="stat-card">
+Curah Hujan
+<br>
+2.450 mm/tahun
 </div>
 
-<div class="layer">
-<input type="checkbox"> LST
+<div class="stat-card">
+NDVI
+<br>
+0.67
 </div>
 
-<div class="layer">
-<input type="checkbox"> Rainfall
-</div>
-
-<div class="layer">
-<input type="checkbox"> Deforestation
+<div class="stat-card">
+LST
+<br>
+31.2°C
 </div>
 
 </div>
@@ -82,43 +88,8 @@ margin:10px 0;
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-<script>
+<script src="js/map.js"></script>
 
-var map =
-L.map('map')
-.setView([-3.78,103.54],8);
-
-L.tileLayer(
-'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-{
-maxZoom:19
-}
-).addTo(map);
-
-</script>
-var osm = L.tileLayer(
-'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-);
-
-var esri = L.tileLayer(
-'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
-);
-
-osm.addTo(map);
-
-var baseMaps = {
-"OpenStreetMap": osm,
-"Satellite": esri
-};
-
-L.control.layers(baseMaps).addTo(map);
 </body>
+
 </html>
-
-L.marker([-3.78,103.54])
-
-.addTo(map)
-
-.bindPopup(
-"<b>Kabupaten Lahat</b><br>Area Penelitian"
-);
