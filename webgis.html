@@ -96,6 +96,21 @@ maxZoom:19
 ).addTo(map);
 
 </script>
+var osm = L.tileLayer(
+'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+);
 
+var esri = L.tileLayer(
+'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
+);
+
+osm.addTo(map);
+
+var baseMaps = {
+"OpenStreetMap": osm,
+"Satellite": esri
+};
+
+L.control.layers(baseMaps).addTo(map);
 </body>
 </html>
